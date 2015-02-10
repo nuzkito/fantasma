@@ -1,0 +1,10 @@
+{
+  "name": "theme-for-abalozz.es",
+  "version": "0.1.0",
+  "dependencies": {
+    "gulp": "^3.8.10",
+    "gulp-rename": "^1.2.0",
+    "gulp-stylus": "^2.0.0",
+    "stylus": "^0.50.0"
+  }
+}

@@ -1,0 +1,32 @@
+{{!< default}}
+
+{{! This is a page template. A page outputs content just like any other post, and has all the same
+    attributes by default, but you can also customise it to behave differently if you prefer. }}
+
+{{! Everything inside the #post tags pulls data from the page }}
+{{#post}}
+
+<header class="post-head MainHeader{{#if image}}" style="background-image: url({{image}}){{else}}--noCover{{/if}}">
+    <nav class="MainNav{{#if image}}{{else}}--noCover{{/if}}">
+        <a class="MainNav-button--back icon-arrow-left" href="{{@blog.url}}">Home</a>
+        <a class="MainNav-button--suscribe icon-feed" href="{{@blog.url}}/rss/">Subscribe</a>
+    </nav>
+</header>
+
+<main class="Content" role="main">
+
+    <article class="Post {{post_class}}">
+    {{! Everything inside the #post tags pulls data from the post }}
+
+        <header class="Post-header">
+            <h1 class="Post-title">{{title}}</h1>
+        </header>
+
+        <section class="Post-content">
+            {{content}}
+        </section>
+
+    </article>
+
+</main>
+{{/post}}
