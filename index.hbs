@@ -21,14 +21,14 @@
             <span class="MainHeader-email">abalozz@outlook.com</span>
         </div>
         <div class="MainHeader-links">
-            <a href="{{@blog.url}}">Blog</a> - <a href="">Artículos</a> - <a href="">Proyectos</a>
+            <a href="#blog" data-scroll-down="">Blog</a> - <a href="/articulos">Artículos</a> - <a href="/proyectos">Proyectos</a>
         </div>
     </div>
-    <a class="MainHeader-scrollToContent icon-arrow-left" id="scroll-down" href="#content" data-offset="-1"><span>Scroll Down</span></a>
+    <a class="MainHeader-scrollToContent icon-arrow-left" href="#blog" data-scroll-down=""><span>Scroll Down</span></a>
 </header>
 
 {{! The main content area on the homepage }}
-<main id="content" class="Content" role="main">
+<main id="blog" class="Content" role="main">
 
     {{! The tag below includes the post loop - partials/loop.hbs }}
     {{> "loop"}}

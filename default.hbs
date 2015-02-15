@@ -15,10 +15,7 @@
     <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
 
     {{! Styles'n'Scripts }}
-    {{!-- <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" /> --}}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/blog.css"}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset "css/prism.css"}}" />
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic|Open+Sans:700,400" />
+    {{> "inline-styles"}}
 
     {{! Ghost outputs important style and meta data with this tag }}
     {{ghost_head}}
@@ -36,12 +33,15 @@
     </footer>
 
     {{! Ghost outputs important scripts and data with this tag }}
-    {{ghost_foot}}
+    {{!-- {{ghost_foot}} --}}
+
+    <script>
+        function loadCSS(e,t,n){"use strict";var i=window.document.createElement("link");var o=t||window.document.getElementsByTagName("script")[0];i.rel="stylesheet";i.href=e;i.media="only x";o.parentNode.insertBefore(i,o);setTimeout(function(){i.media=n||"all"})}
+        loadCSS('{{asset "css/blog.css"}}');
+    </script>
 
     {{! The main JavaScript file for Casper }}
-    <script type="text/javascript" src="{{asset "js/jquery.fitvids.js"}}"></script>
-    <script type="text/javascript" src="{{asset "js/prism.js"}}"></script>
-    <script type="text/javascript" src="{{asset "js/index.js"}}"></script>
+    <script type="text/javascript" src="{{asset "js/index.js"}}" async=""></script>
 
     <script type="text/javascript">
         /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
