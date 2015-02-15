@@ -1,0 +1,37 @@
+/**
+ * # Base
+ *
+ * Otros estilos base
+ */
+
+$fontSize ?= 100%
+
+html
+  box-sizing border-box
+  color $fontColor
+  font-family $fontFamily
+  font-size $fontSize
+  background-color #FFF 
+
+body
+  margin 0
+  -webkit-font-feature-settings: 'kern' 1;
+  -moz-font-feature-settings: 'kern' 1;
+  -o-font-feature-settings: 'kern' 1;
+
+
+
+*
+:before
+:after
+  // box-sizing se define en el html, y se hereda en el resto de elementos.
+  // http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+  box-sizing inherit
+
+pre
+code
+  overflow-y scroll
+
+@media all and (min-width 56em)
+  html
+    font-size 110%

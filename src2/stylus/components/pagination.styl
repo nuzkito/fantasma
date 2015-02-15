@@ -1,0 +1,39 @@
+.Pagination
+    width auto
+    max-width 45em
+    margin .5em auto
+    color $gray
+    text-align center
+    display flex
+    flex-wrap wrap
+
+.Pagination-pageNumber
+    flex-basis 100%
+    order -1
+
+.Pagination-olderPosts
+.Pagination-newerPosts
+    color $gray
+    margin .5em 1em
+    padding 0 1em
+    line-height 2em
+    border 1px solid currentColor
+    border-radius $borderRadius
+    transition all 0.3s ease 0s
+    flex-basis 100%
+    
+    &:hover
+        color $darkgray
+
+@media all and (min-width $bp-medium)
+    .Pagination
+        justify-content center
+        
+    .Pagination-olderPosts
+    .Pagination-newerPosts
+    .Pagination-pageNumber
+        flex-basis auto
+    
+    .Pagination-pageNumber
+        order 0
+        line-height 3

@@ -1,0 +1,103 @@
+// Cabecera
+.MainHeader
+    &
+    &--noCover
+        text-align center
+        position relative
+    
+    &
+        padding 10vh 0
+        min-height 9em
+        background none no-repeat scroll center center / cover $black
+        overflow hidden
+        color $white
+        text-shadow 0 0 .2em $black
+    
+    &--noCover
+        border-bottom 1px solid $silver
+
+    &-content
+        width 80%
+        margin 2em auto
+        max-width 45em
+
+    // Título
+    .home-template &-title
+        animation 0.6s ease 0.2s normal none 1 running fade-in-down
+        -webkit-animation 0.6s ease 0.2s normal none 1 running fade-in-down
+
+    &-title
+        font-size 2em
+        margin .2em 0
+
+    // Descripción
+    .home-template &-description
+        animation 0.9s ease 0.1s normal none 1 running fade-in-down
+        -webkit-animation 0.9s ease 0.1s normal none 1 running fade-in-down
+
+    &-description
+        margin 0
+        font-size 1.2em
+        font-weight 300
+        color rgba(255, 255, 255, 0.7)
+    
+    &-social
+        font-weight 300
+        margin 1em 0 0
+        font-size 1.5em
+        vertical-align baseline
+        a
+            color rgba($white,.8)
+            display inline-block
+            margin .2em
+            &:hover
+                color $white
+    
+    &-email
+        display block
+        font-size .6em
+        margin-top .3em
+    
+    &-links
+        font-weight 300
+        margin 1em
+        a
+            color $silver
+            &:hover
+                color $green4
+
+    // Botón de scroll al contenido
+    &-scrollToContent
+        outline 0
+        display block
+        position absolute
+        z-index 9
+        bottom 0em
+        left 50%
+        margin-left -.5em
+        width 2em
+        height 2em
+        font-size 2em
+        text-decoration none
+        color rgba(255, 255, 255, 0.6)
+        transform rotate(-90deg)
+        animation 4s ease 2s normal none infinite running bounce
+        -webkit-animation 4s ease 2s normal none infinite running bounce
+
+        &:hover
+            color rgba(255, 255, 255, 0.8)
+
+        > span
+            display none
+
+@media all and (min-width $bp-large)
+    .home-template .MainHeader
+        font-size 1.2rem
+        height 100vh
+        display flex
+        flex-direction column
+        justify-content space-around
+        padding 0
+        
+        &-content
+            vertical-align middle

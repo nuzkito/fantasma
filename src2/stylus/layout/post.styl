@@ -1,0 +1,84 @@
+.Post
+    line-height 1.4em
+    font-size 1em
+    max-width 45em
+    margin 0 auto
+    padding .5em 1em 1.5em
+    border-bottom 1px solid #EBF2F6
+    letter-spacing -0.01em
+    line-height 1.65em
+    
+    &-title
+        margin-bottom .5em
+
+    &-excerpt
+        font-weight 300
+        word-wrap break-word
+    
+    &-excerpt
+    &-content
+        font-weight 300
+    
+    &-content
+        a
+            text-decoration underline
+        
+    &-meta
+        font-size .85em
+        color $gray
+        line-height 1.35em
+        
+        a
+            color $gray
+            text-decoration underline
+            
+            &:hover
+                color $green4
+        
+    &-meta--cover
+        font-size .85em
+        color $white
+        // line-height 1.35em
+        
+        a
+            color $white
+            text-decoration underline
+            
+            &:hover
+                color $green4
+
+    &-footer
+        text-align center
+
+    &-author
+        margin 0 0 2em
+        padding 1em 0
+        border-top 1px dashed $silver
+        border-bottom 1px dashed $silver
+        font-weight 300
+        font-size .9rem
+        
+        &-meta
+            color $gray
+            font-style italic
+            
+            a
+                color inherit
+                &:hover
+                    color $green4
+
+    &-share
+        a
+            color $silver
+            margin .5em
+            font-size 1.8rem
+            
+            &:hover
+                color $darkgray
+
+            span
+                display none
+
+@media all and (min-width $bp-large)
+    .Post-title
+        font-size 2.7rem
