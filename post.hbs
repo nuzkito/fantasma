@@ -6,10 +6,9 @@
 {{! Everything inside the #post tags pulls data from the post }}
 {{#post}}
 
-<header class="post-head MainHeader{{#if image}}" style="background-image: url({{image}}){{else}}--noCover{{/if}}">
+<header class="post-head MainHeader{{#if image}}" style="background: linear-gradient(to bottom, rgba(0,0,0,.5),rgba(0,0,0,.6),rgba(0,0,0,.5)), url({{image}}){{else}}--noCover{{/if}}">
     <nav class="MainNav{{#if image}}{{else}}--noCover{{/if}}">
-        <a class="MainNav-button--back icon-arrow-left" href="{{@blog.url}}">Volver</a>
-        <a class="MainNav-button--suscribe icon-feed" href="{{@blog.url}}/rss/"> Suscríbete</a>
+        <a class="MainNav-button icon-arrow-left" href="{{@blog.url}}">Volver</a>
     </nav>
 
     {{#if image}}

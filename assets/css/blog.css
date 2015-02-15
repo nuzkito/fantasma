@@ -102,12 +102,13 @@ a:hover{color:#28965a}
 @media all and (min-width:56em){.home-template .MainHeader{font-size:1.2rem;height:100vh;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-justify-content:space-around;-ms-flex-pack:distribute;justify-content:space-around;padding:0}
 .home-template .MainHeader-content{vertical-align:middle}}
 .MainNav{position:absolute;top:0;left:0;right:0;background:linear-gradient(to bottom,rgba(0,0,0,.5) 0,transparent 100%)}
-.MainNav,.MainNav--noCover{height:3em;padding:.5em}
-[class*=" MainNav-button"],[class^=MainNav-button]{display:inline-block;border:1px solid transparent;font-size:.9em;text-transform:uppercase;border-radius:.25em;transition:all .3s ease 0s;height:100%;padding:.5em .6em;color:#ddd;float:left}
-[class*=" MainNav-button"]:hover,[class^=MainNav-button]:hover{border:1px solid;color:inherit;background-color:rgba(255,255,255,.2)}
-.MainNav-button--suscribe{float:right}
-@media all and (min-width:56em){.MainNav,.MainNav--noCover{padding:1em}
-[class*=" MainNav-button"],[class^=MainNav-button]{font-size:.6em;border:1px solid #fff;line-height:3em;padding:0 1.5em;height:auto;text-shadow:none}
+.MainNav,.MainNav--noCover{text-align:left;height:3em;padding:.5em}
+.MainNav-button{display:inline-block;border:1px solid transparent;font-size:.9em;font-weight:700;text-transform:uppercase;border-radius:.25em;transition:all .3s ease 0s;height:100%;padding:.5em .6em;color:#ddd;background-color:rgba(0,0,0,.7)}
+.MainNav-button:hover{border:1px solid;color:inherit;background-color:rgba(255,255,255,.2)}
+.MainNav-button::before{vertical-align:baseline}
+@media all and (min-width:56em){.MainNav{padding:1em}
+.MainNav--noCover{padding:.5em}
+[class*=" MainNav-button"],[class^=MainNav-button]{font-size:.6em;border:1px solid #fff;line-height:3em;padding:.1em 1.5em 0 1.2em;height:auto;text-shadow:none}
 [class*=" MainNav-button"]:hover,[class^=MainNav-button]:hover{border:1px solid #fff;background-color:#fff;color:#111}}
 .Footer{background-color:#444;color:#fff;padding:.5em 1em;text-align:center;font-weight:300}
 .Footer a{color:#aaa;font-weight:600}

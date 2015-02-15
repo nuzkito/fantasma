@@ -4,8 +4,7 @@
 {{! If we have a tag cover, display that - else blog cover - else nothing }}
 <header class="tag-head MainHeader{{#if tag.image}}" style="background-image: url({{tag.image}}){{else}}{{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}--noCover{{/if}}{{/if}}">
     <nav class="MainNav">
-        <a class="MainNav-button--back icon-arrow-left" href="{{@blog.url}}">Home</a>
-        <a class="MainNav-button--suscribe icon-feed" href="{{@blog.url}}/tag/{{tag.slug}}/rss/"> {{tag.name}}</a>
+        <a class="MainNav-button icon-arrow-left" href="{{@blog.url}}">Home</a>
     </nav>
     <div class="MainHeader-content">
         <h1 class="MainHeader-title">{{tag.name}}</h1>

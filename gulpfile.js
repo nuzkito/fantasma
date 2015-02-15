@@ -42,8 +42,8 @@ gulp.task('critical', ['copystyles'], function () {
     src: 'partials/styles.html',
     css: 'assets/css/blog.css',
     dest: 'assets/css/inline.css',
-    width: 320,
-    height: 480,
+    width: 900,
+    height: 640,
     minify: true
   }, function(err, output){
     critical.inline({
