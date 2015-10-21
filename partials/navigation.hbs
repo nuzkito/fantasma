@@ -1,0 +1,7 @@
+{{#foreach navigation}}
+    {{#if @first}}
+        <a href="#blog" data-scroll-down="">Blog</a>
+    {{else}}
+        - <a href="{{url absolute="true"}}">{{label}}</a>
+    {{/if}}
+{{/foreach}}
