@@ -1,0 +1,24 @@
+/**
+ * # Mixins
+ */
+
+button()
+    display inline-block
+    text-decoration none
+    border-radius .2em
+    padding .2em .8em
+    transition all .1s ease-in-out
+    border 1px solid currentColor
+
+    &:hover
+        color $green4
+
+tag()
+    button()
+    background $darkgray
+    color white
+    border none
+
+    &:hover
+        color white
+        background $green4

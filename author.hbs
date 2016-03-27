@@ -1,17 +1,7 @@
 {{!< default}}
-{{! The tag above means - insert everything in this file into the {body} of the default.hbs template }}
 
-{{! The big featured header }}
-
-{{! Everything inside the #author tags pulls data from the author }}
 {{#author}}
-    <header class="author-head MainHeader{{#if cover}}" style="background-image: url({{cover}}){{else}}--noCover{{/if}}">
-        <nav class="MainNav{{#if image}}{{else}}--noCover{{/if}}">
-            <a class="MainNav-button icon-arrow-left" href="{{@blog.url}}">Home</a>
-        </nav>
-    </header>
-
-    <section class="MainHeader-content AuthorProfile">
+    <section class="AuthorProfile">
         {{#if image}}
         <figure class="AuthorProfile-image">
             <div class="img" style="background-image: url({{image}})"><span class="hidden">{{name}}'s Picture</span></div>
@@ -27,10 +17,8 @@
     </section>
 {{/author}}
 
-{{! The main content area on the homepage }}
 <main class="Content" role="main">
 
-    {{! The tag below includes the post loop - partials/loop.hbs }}
     {{> "loop"}}
 
 </main>

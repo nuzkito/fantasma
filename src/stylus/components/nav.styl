@@ -1,0 +1,36 @@
+.Nav
+    font-family $alternativeFontFamily
+    background #222
+    text-align center
+    font-size 1.2em
+    display flex
+
+    a
+        color white
+        padding .5em
+        border-top: .3em solid transparent
+        transition border-color .2s ease-in-out
+
+        &:hover
+            border-color $green4
+
+        &:first-child
+            display none
+
+@media (min-width 56em)
+    .Nav
+        font-size 1em
+
+        a:first-child
+            display inline
+
+@media (min-width 48em)
+    .Nav
+        justify-content flex-end
+
+        a:first-child
+            margin-left calc((100% - 42rem) / 2)
+            margin-right auto
+
+        a:last-child
+            margin-right calc((100% - 42rem) / 2)

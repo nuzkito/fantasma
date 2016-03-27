@@ -1,20 +1,13 @@
 // Cabecera
 .MainHeader
-    &
-    &--noCover
-        text-align center
-        position relative
-    
-    &
-        padding 0 0 2em
-        min-height 9em
-        background none no-repeat scroll center center / cover $black
-        overflow hidden
-        color $white
-        text-shadow 0 0 .2em $black
-    
-    &--noCover
-        border-bottom 1px solid $silver
+    text-align center
+    position relative
+    padding 0 0 2em
+    min-height 9em
+    background none no-repeat scroll center center / cover $black
+    overflow hidden
+    color $white
+    text-shadow 0 0 .2em $black
 
     &-content
         margin 2em auto
@@ -23,7 +16,6 @@
     // Título
     .home-template &-title
         animation 0.6s ease 0.2s normal none 1 running fade-in-down
-        -webkit-animation 0.6s ease 0.2s normal none 1 running fade-in-down
 
     &-title
         font-size 2em
@@ -39,49 +31,53 @@
         font-size 1.2em
         font-weight 300
         color rgba(255, 255, 255, 0.7)
-    
+
     &-social
-        font-weight 300
-        margin 1em 0 0
-        font-size 1.5em
-        vertical-align baseline
+        font-size 2.4em
+        display flex
+        justify-content center
+        margin .5em 0 .3em
+        height 1em
+
         a
-            color rgba($white,.8)
-            display inline-block
-            margin .2em
+            color rgba($white, .8)
+            margin 0 .2em
+
             &:hover
                 color $white
-    
+
     &-email
         display block
-        font-size .6em
-        margin-top .3em
-    
+
     &-links
         font-weight 300
         margin 1em
         a
             color $silver
+
             &:hover
                 color $green4
 
-    // Botón de scroll al contenido
+            &:not(:last-child)::after
+                color $silver
+                content ' |'
+
     &-scrollToContent
         outline 0
         display block
         position absolute
-        z-index 9
-        bottom 0em
+        bottom 0
         left 50%
-        margin-left -.5em
+        margin-left -1em
         width 2em
-        height 2em
-        font-size 2em
+        height 1em
+        font-size 3em
         text-decoration none
         color rgba(255, 255, 255, 0.6)
-        transform rotate(-90deg)
         animation 4s ease 2s normal none infinite running bounce
-        -webkit-animation 4s ease 2s normal none infinite running bounce
+
+        svg
+            stroke rgba(black, .1)
 
         &:hover
             color rgba(255, 255, 255, 0.8)
@@ -97,6 +93,6 @@
         flex-direction column
         justify-content space-around
         padding 0
-        
+
         &-content
             vertical-align middle

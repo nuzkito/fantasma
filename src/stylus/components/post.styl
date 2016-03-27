@@ -1,0 +1,150 @@
+.Post
+    &-cover
+        background-size cover
+        background-position 50% 50%
+        background-repeat: no-repeat;
+        min-height 10em
+        display flex
+        flex-direction column-reverse
+
+    &-titleCovered
+        color: #ccc;
+        mix-blend-mode: difference;
+        text-shadow: 0 0 3px black
+        padding .2em 1rem
+        margin 0 auto
+        max-width 40rem
+        width 100%
+
+    &-title
+        max-width 40rem
+        margin .5em auto 0
+        padding 0 1rem
+
+    &-meta
+        font-family $alternativeFontFamily
+        font-size .85em
+        color $gray
+        line-height 1.35em
+        max-width 40rem
+        margin 1em auto
+        padding 0 1rem
+
+        a
+            color $gray
+            color $gray
+            text-decoration underline
+
+            &:hover
+                color $green4
+
+    &-excerpt
+        font-weight 300
+        word-wrap break-word
+        max-width 40rem
+        margin auto
+        padding 0 1rem
+        line-height 1.8em
+
+    &-content
+        margin 0 auto
+        max-width 40rem
+        padding .5em 1rem 1.5em
+
+        a
+            text-decoration underline
+            text-decoration-color $gray
+
+        img
+            max-width 100%
+
+        iframe
+            max-width 100%
+            margin auto
+            display block
+
+        blockquote
+            border-width 1px 1px 1px .5em
+            border-style solid
+            border-color transparent transparent transparent $green4
+            background: #eee
+            padding 0 .8em
+            margin-left 1em
+            margin-right 1em
+            font-size .8em
+
+            :first-child
+                margin-top .5em
+
+            :last-child
+                margin-bottom .5em
+
+        pre
+            font-size .8em
+
+        p
+            line-height 1.8em
+
+        li
+            margin .5em 0
+
+        :first-child
+            margin-top 0
+
+        code:not([class])
+            background #272822
+            color white
+            display inline-block
+            padding 0 .4em
+            line-height 1.8em
+            vertical-align middle
+            overflow visible
+            border-radius .2em
+
+    &-footer
+        max-width 40rem
+        text-align center
+        margin auto
+
+    &-share
+        border-top 1px dashed $silver
+
+        a
+            color $silver
+            margin .2em
+            font-size 2.5em
+
+            &:hover
+                color $darkgray
+
+            span
+                display none
+
+    &-tags
+        font-size .8em
+        margin-top 1em
+
+        a
+            tag()
+            margin-right .5em
+
+@media (min-width 40em)
+    .Post-cover
+        min-height 15em
+
+    .Post-tags
+        float right
+        margin-top 0
+
+        a
+            margin-right 0
+            margin-left .5em
+            vertical-align middle
+
+@media (min-width 90em)
+    .Post-cover
+        min-height 20em
+
+@media all and (min-width $bp-large)
+    .Post-title
+        font-size 3rem

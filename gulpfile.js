@@ -1,87 +1,72 @@
-var gulp = require('gulp');
-var stylus = require('gulp-stylus');
-var rename = require('gulp-rename');
-var autoprefixer = require('gulp-autoprefixer');
-var minifyCSS = require('gulp-minify-css');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var jshint = require('gulp-jshint');
-var critical = require('critical');
-var browserSync = require('browser-sync');
+'use strict';
 
-gulp.task('css', function () {
-  return gulp.src('src/stylus/index.styl')
-    .pipe(stylus({
-       "include css": true
-    }))
-    .pipe(autoprefixer({
-      browsers: ['last 2 versions'],
-      cascade: false,
-      remove: true
-    }))
-    .pipe(minifyCSS({
-      debug: true,
-      keepSpecialComments: 0,
-      keepBreaks: true,
-    }))
-    .pipe(rename('blog.css'))
-    .pipe(gulp.dest('assets/css/'));
+const gulp = require('gulp');
+const stylus = require('gulp-stylus');
+const rename = require('gulp-rename');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
+const browserSync = require('browser-sync');
+const cssnano = require('cssnano');
+const postcss = require('gulp-postcss');
+const mergeStream = require('merge-stream');
+const path = require('path');
+
+gulp.task('build:css', function () {
+    const stylusStream = gulp.src('src/stylus/index.styl').pipe(stylus());
+    const cssStream = gulp.src('node_modules/prismjs/themes/prism-okaidia.css');
+
+    let plugins = [
+        cssnano({
+            autoprefixer: {
+                browsers: ['last 2 versions'],
+            },
+        }),
+    ];
+
+    return mergeStream(cssStream, stylusStream)
+        .pipe(postcss(plugins))
+        .pipe(concat('blog.css'))
+        .pipe(gulp.dest('assets/'));
 });
 
-gulp.task('copystyles', function () {
-  return gulp.src(['assets/css/blog.css'])
-    .pipe(rename({
-      basename: 'inline'
-    }))
-    .pipe(gulp.dest('assets/css'));
+gulp.task('build:js', function () {
+    let jsFiles = [
+        'node_modules/prismjs/prism.js',
+        'node_modules/prismjs/components/prism-bash.js',
+        'node_modules/prismjs/components/prism-clike.js',
+        'node_modules/prismjs/components/prism-css.js',
+        'node_modules/prismjs/components/prism-css-extras.js',
+        'node_modules/prismjs/components/prism-git.js',
+        'node_modules/prismjs/components/prism-javascript.js',
+        'node_modules/prismjs/components/prism-json.js',
+        'node_modules/prismjs/components/prism-jsx.js',
+        'node_modules/prismjs/components/prism-markdown.js',
+        'node_modules/prismjs/components/prism-markup.js',
+        'node_modules/prismjs/components/prism-nginx.js',
+        'node_modules/prismjs/components/prism-php.js',
+        'node_modules/prismjs/components/prism-php-extras.js',
+        'node_modules/prismjs/components/prism-stylus.js',
+        'src/js/*.js',
+    ];
+
+    return gulp.src(jsFiles)
+        .pipe(concat('blog.js'))
+        .pipe(uglify())
+        .pipe(gulp.dest('assets/'));
 });
 
-gulp.task('critical', ['copystyles'], function () {
-  critical.generate({
-    base: './',
-    src: 'partials/styles.html',
-    css: 'assets/css/blog.css',
-    dest: 'assets/css/inline.css',
-    width: 900,
-    height: 640,
-    minify: true
-  }, function(err, output){
-    critical.inline({
-      base: './',
-      src: 'partials/styles.html',
-      dest: 'partials/inline-styles.hbs',
-      minify: true,
-      extract: true
-    });
-  });
-});
+gulp.task('build', ['build:css', 'build:js']);
 
-gulp.task('js', function () {
-  return gulp.src([
-      'src/js/lib/*.js',
-      'src/js/*.js',
-    ])
-    .pipe(concat('index.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('assets/js/'));
-});
-
-gulp.task('lint', function() {
-  return gulp.src('src/js/*.js')
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'));
-});
-
-gulp.task('watch', ['css', 'js', 'lint'], function () {
-  gulp.watch('src/stylus/**/*.styl', ['css', 'critical', browserSync.reload]);
-  gulp.watch('src/js/**/*.js', ['js', browserSync.reload]);
-  gulp.watch('src/js/*.js', ['lint']);
+gulp.task('watch', function () {
+    gulp.watch('src/stylus/**/*.styl', ['build:css', browserSync.reload]);
+    gulp.watch('src/js/**/*.js', ['build:js', browserSync.reload]);
 });
 
 gulp.task('browser-sync', function() {
-  browserSync({
-    proxy: "http://localhost:2368"
-  });
+    browserSync({
+        proxy: 'http://localhost:2368',
+        open: false,
+    });
 });
 
-gulp.task('default', ['watch', 'browser-sync']);
+gulp.task('default', ['build', 'watch', 'browser-sync']);

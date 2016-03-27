@@ -1,0 +1,103 @@
+/**
+ * # Base
+ *
+ * Otros estilos base
+ */
+
+$fontSize ?= 100%
+
+html
+    box-sizing border-box
+    color $fontColor
+    font-family $primaryFontFamily
+    font-size $fontSize
+    font-weight 300
+    background-color #222
+
+body
+    margin 0
+    -webkit-font-feature-settings: 'kern' 1;
+    -moz-font-feature-settings: 'kern' 1;
+    -o-font-feature-settings: 'kern' 1;
+    font-feature-settings: 'kern' 1;
+    background-color white
+
+@media all and (min-width 40em)
+    html
+        font-size 110%
+
+@media all and (min-width 56em)
+    html
+        font-size 120%
+
+*
+:before
+:after
+    // box-sizing se define en el html, y se hereda en el resto de elementos.
+    // http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+    box-sizing inherit
+
+pre
+    overflow-y scroll
+
+hr
+    border-top none
+    border-right none
+    border-bottom 1px solid $silver
+    border-left none
+
+a
+    color $darkgray
+    text-decoration none
+    transition color ease 0.2s
+
+    &:hover
+        color $green4
+
+strong
+    font-weight 700
+
+/**
+ * # Títulos
+ *
+ * Títulos h1 - h6
+ * Los estilos de cada título también se asignan a una clase. De esta forma es
+ * posible asignar un estilo de h3 a un h2, por ejemplo, de forma que podamos
+ * respetar la semántica y aplicar los estilos adecuados a los títulos en las
+ * diferentes secciones.
+ */
+
+h1, h2, h3, h4, h5, h6
+    font-weight 300
+    line-height 1.2em
+
+h1, .h1
+    font-size 2.3rem
+    letter-spacing -0.03em
+    margin .5em 0 0
+
+h2, .h2
+    font-size 1.8rem
+    letter-spacing 0.01em
+
+h3, .h3
+    font-size 1.65rem
+
+h4, .h4
+    font-size 1.5rem
+    margin .5em
+
+h5, .h5
+    font-size 1.35rem
+
+h6, .h6
+    font-size 1.2rem
+
+
+
+/**
+ * # Clases utilitarias
+ */
+
+.is-hidden
+    display none !important
