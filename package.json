@@ -1,7 +1,7 @@
 {
   "name": "fantasma",
   "description": "Theme for Ghost",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "devDependencies": {
     "browser-sync": "2.11.2",
     "cssnano": "3.5.2",
