@@ -2,6 +2,14 @@
   "name": "fantasma",
   "description": "Theme for Ghost",
   "version": "1.0.1",
+  "author": {
+    "name": "Iván Abascal Lozano",
+    "email": "abalozz@outlook.com",
+    "url": "https://abalozz.es"
+  },
+  "keywords": [
+    "ghost-theme"
+  ],
   "devDependencies": {
     "browser-sync": "2.11.2",
     "cssnano": "3.5.2",

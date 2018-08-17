@@ -1,8 +1,8 @@
 {{!< default}}
 
 {{#is "home"}}
-<header class="MainHeader{{#if @blog.cover}}" style="background-image: url({{@blog.cover}}){{else}}--noCover{{/if}}">
-    <nav class="MainNav{{#if @blog.cover}}{{else}}--noCover{{/if}}">
+<header class="MainHeader{{#if @blog.cover_image}}" style="background-image: url({{@blog.cover_image}}){{else}}--noCover{{/if}}">
+    <nav class="MainNav{{#if @blog.cover_image}}{{else}}--noCover{{/if}}">
         {{#if @blog.logo}}<a class="Logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Logo" /></a>{{/if}}
     </nav>
     <div class="MainHeader-content">

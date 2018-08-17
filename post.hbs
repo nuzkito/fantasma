@@ -5,8 +5,8 @@
 <main class="Content" role="main">
     <article class="Post {{post_class}}">
         <header class="Post-header">
-            {{#if image}}
-                <div class="Post-cover" style="background-image: url({{image}});">
+            {{#if feature_image}}
+                <div class="Post-cover" style="background-image: url({{img_url feature_image}});">
                     <h1 class="Post-titleCovered">{{title}}</h1>
                 </div>
             {{else}}
