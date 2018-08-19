@@ -7,6 +7,9 @@
     "email": "abalozz@outlook.com",
     "url": "https://abalozz.es"
   },
+  "config": {
+    "posts_per_page": 5
+  },
   "keywords": [
     "ghost-theme"
   ],
