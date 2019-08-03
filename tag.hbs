@@ -1,11 +1,13 @@
 {{!< default}}
 
 <main class="content" role="main">
-    <h1>{{tag.name}}</h1>
-    {{#if tag.description}}
-        <p>{{tag.description}}</p>
-    {{/if}}
-    <p>{{pagination.total}} artículos</p>
+    <header class="TagPageHeader">
+        <h1>{{tag.name}}</h1>
+        {{#if tag.description}}
+            <p>{{tag.description}}</p>
+        {{/if}}
+        <p>{{pagination.total}} artículos</p>
+    </header>
 
     {{> "loop"}}
 </main>
