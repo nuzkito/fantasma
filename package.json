@@ -14,15 +14,15 @@
     "ghost-theme"
   ],
   "devDependencies": {
-    "browser-sync": "^2.24.6",
-    "cssnano": "^4.0.5",
-    "gulp": "3.9.1",
+    "browser-sync": "^2.26.7",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.2",
     "gulp-concat": "2.6.1",
     "gulp-postcss": "8.0.0",
     "gulp-rename": "1.4.0",
     "gulp-stylus": "2.7.0",
-    "gulp-uglify": "3.0.1",
-    "merge-stream": "1.0.1",
-    "prismjs": "1.15.0"
+    "gulp-uglify": "^3.0.2",
+    "merge-stream": "^2.0.0",
+    "prismjs": "^1.17.1"
   }
 }
