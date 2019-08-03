@@ -8,25 +8,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
-    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic|Merriweather+Sans:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="{{asset "blog.css"}}">
     {{ghost_head}}
 </head>
 <body class="{{body_class}}">
+    <header class="Header">
+        {{#is 'home'}}
+            <h1 class="name">Iván Abascal Lozano</h1>
+        {{else}}
+            <p class="name">Iván Abascal Lozano</p>
+        {{/is}}
+        <p class="job">Desarrollador web</p>
+        <div class="social-links">
+            <a class="social-link" target="_blank" href="https://twitter.com/abalozz">
+                <svg class="icon icon-twitter">
+                    <use xlink:href="#icon-twitter"></use>
+                </svg>
+            </a>
+            <a class="social-link" target="_blank" href="https://github.com/abalozz">
+                <svg class="icon icon-github">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            </a>
+            <a class="social-link" target="_blank" href="https://www.linkedin.com/in/abalozz/">
+                <svg class="icon icon-linkedin">
+                    <use xlink:href="#icon-linkedin"></use>
+                </svg>
+            </a>
+            <span class="email">abalozz@outlook.com</span>
+        </div>
+    </header>
 
-    {{^is "home"}}
     <nav class="Nav">
-        <a href="{{@blog.url}}">{{@blog.title}}</a>
         {{navigation}}
     </nav>
-    {{/is}}
 
     {{{body}}}
 
     <footer class="Footer site-footer clearfix">
-        <p>
-            &copy; 2014 - {{date format="YYYY"}}. Publicado con <a href="https://ghost.org">Ghost</a>. Alojado en <a href="https://www.digitalocean.com/?refcode=35057d3395fe">Digital Ocean</a>.
-        </p>
+        <p>&copy; 2014 - {{date format="YYYY"}}</p>
     </footer>
 
     {{> "svg"}}

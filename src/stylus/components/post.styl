@@ -14,6 +14,8 @@
         min-height 10em
         display flex
         flex-direction column-reverse
+        max-width 40rem
+        margin auto
 
     &-titleCovered
         background rgba(0, 0, 0, .7)
@@ -51,7 +53,7 @@
         max-width 40rem
         margin auto
         padding 0 1rem
-        line-height 1.8em
+        line-height 1.6em
 
     &-content
         margin 0 auto
@@ -90,10 +92,11 @@
             font-size .8em
 
         p
-            line-height 1.8em
+            line-height 1.6em
 
         li
             margin .5em 0
+            line-height 1.6em
 
         :first-child
             margin-top 0
@@ -111,25 +114,6 @@
     &-comments
         max-width 40rem
         margin auto
-
-    &-footer
-        max-width 40rem
-        text-align center
-        margin auto
-
-    &-share
-        border-top 1px dashed $silver
-
-        a
-            color $silver
-            margin .2em
-            font-size 2.5em
-
-            &:hover
-                color $darkgray
-
-            span
-                display none
 
     &-tags
         font-size .8em
