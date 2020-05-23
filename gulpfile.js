@@ -62,7 +62,7 @@ function reload(done) {
 
 function sync() {
     browserSync.init({
-        proxy: 'http://localhost:2368',
+        proxy: 'http://ghost:2368',
         open: false,
     });
 }
