@@ -13,12 +13,14 @@
 </head>
 <body class="{{body_class}}">
     <header class="Header">
-        {{#is 'home'}}
-            <h1 class="name">Iván Abascal Lozano</h1>
-        {{else}}
-            <p class="name">Iván Abascal Lozano</p>
-        {{/is}}
-        <p class="job">Desarrollador web</p>
+        <a href="/" class="main-link">
+            {{#is 'home'}}
+                <h1 class="name">Iván Abascal Lozano</h1>
+            {{else}}
+                <p class="name">Iván Abascal Lozano</p>
+            {{/is}}
+            <p class="job">Desarrollador web</p>
+        </a>
         <div class="social-links">
             <a class="social-link" target="_blank" href="https://twitter.com/abalozz">
                 <svg class="icon icon-twitter">

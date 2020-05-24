@@ -9,12 +9,14 @@
         margin 0 auto
         font-size 1.2em
         max-width 38rem
+        letter-spacing initial
+        line-height 1.2em
+        font-weight 300
 
     .job
         margin 0 auto
         font-size 1.1em
         max-width 38rem
-        color #aca
 
     .social-links
         margin 0 auto
@@ -28,3 +30,18 @@
 
     .email
         font-size: 0.8em
+
+    .main-link
+        .name
+            color $silver
+            transition color 0.1s ease
+
+        &:hover .name
+            color white
+
+        .job
+            color lighten($mainColor, 25%)
+            transition color 0.1s ease
+
+        &:hover .job
+            color lighten($mainColor, 70%)
