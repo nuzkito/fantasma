@@ -25,20 +25,22 @@
             {{content}}
         </section>
 
-        <div id="disqus_thread" class="Post-comments"></div>
-        <script type="text/javascript">
-            var disqus_config = function () {
-                this.page.url = "{{url absolute="true"}}";
-                this.page.identifier = "ghost-{{comment_id}}"
-            };
-            (function() {
-                var d = document, s = d.createElement('script');
-                s.src = 'https://abalozz.disqus.com/embed.js';
-                s.setAttribute('data-timestamp', +new Date());
-                (d.head || d.body).appendChild(s);
-            })();
-        </script>
-        <noscript>Necesitas activar JavaScript para poder ver los comentarios. Esto se debe a que uso <a href="https://disqus.com/?ref_noscript">Disqus</a> para gestionar los comentarios de la web.</noscript>
+        <div class="Post-comments">
+            <div id="disqus_thread"></div>
+            <script type="text/javascript">
+                var disqus_config = function () {
+                    this.page.url = "{{url absolute="true"}}";
+                    this.page.identifier = "ghost-{{comment_id}}"
+                };
+                (function() {
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://abalozz.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                })();
+            </script>
+            <noscript>Necesitas activar JavaScript para poder ver los comentarios. Esto se debe a que uso <a href="https://disqus.com/?ref_noscript">Disqus</a> para gestionar los comentarios de la web.</noscript>
+        </div>
     </article>
 </main>
 
